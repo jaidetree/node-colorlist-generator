@@ -2,14 +2,13 @@
   "name": "color-list-generator",
   "version": "1.0.0",
   "description": "Generate a list of RGB colors.",
-  "main": "lib/colortable.js",
+  "main": "lib/colorlistgenerator.js",
   "directories": {
     "test": "test",
     "input": "input",
     "output": "output"
   },
   "dependencies": {
-    "cheerio": "^0.18.0",
     "coffee-script": "^1.9.0",
     "cson": "^1.6.2",
     "minimist": "^1.1.0",

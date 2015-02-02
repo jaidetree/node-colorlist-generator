@@ -1,2 +1,2 @@
 require('coffee-script/register')
-require('./src/colorlist.coffee')
+require('./src/colorlistgenerator.coffee')

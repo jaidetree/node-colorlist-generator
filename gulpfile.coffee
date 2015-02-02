@@ -7,7 +7,7 @@ mocha = require 'gulp-mocha'
 paths =
   test: './test/*.coffee'
   src:
-    coffee: './src/*.coffee'
+    coffee: './src/**/*.coffee'
   build:
     lib: './lib'
     html: './output/*.html'
