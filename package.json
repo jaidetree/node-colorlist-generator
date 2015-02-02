@@ -4,7 +4,9 @@
   "description": "Generate a list of RGB colors.",
   "main": "lib/colortable.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "input": "input",
+    "output": "output"
   },
   "dependencies": {
     "cheerio": "^0.18.0",
