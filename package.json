@@ -1,6 +1,6 @@
 {
   "name": "color-list-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate a JSON file of RGB colors.",
   "main": "lib/index.js",
   "bin": {
