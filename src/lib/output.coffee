@@ -17,8 +17,7 @@ class Output
 
   save: () ->
     result = @render()
-    filename = path.dirname(path.dirname(__dirname))
-    filename = path.join(filename, 'output/' + @file)
+    filename = './output/' + @file
     fs.writeFileSync filename, result
 
 class HTMLOutput extends Output

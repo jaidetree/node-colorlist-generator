@@ -13,7 +13,7 @@ run = ->
 
     file = args._[0]
     console.log _f('Reading CSON Input file: "%s" ', file)
-    file = path.join path.dirname(__dirname), 'input', file
+    file = file
 
     colorListGenerator = new ColorListGenerator CSON.parseFileSync(file)
     colorListGenerator.generate()
