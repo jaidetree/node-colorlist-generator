@@ -4,11 +4,11 @@ class ColorList
   ###
 
   constructor: (table) ->
+    @table = table
     @colors = []
-    @makeListFrom(table)
 
-  get: ->
-    return @colors
+  build: ->
+    return @makeListFrom(@table)
 
   makeListFrom: (table) ->
     colors = table
@@ -22,7 +22,7 @@ class ColorList
     return @colors
 
   toArray: ->
-    return @colors
+    return @build()
 
   toString: ->
     colors = []

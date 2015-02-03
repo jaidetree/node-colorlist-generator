@@ -1,6 +1,5 @@
 _f = require('util').format
 path = require 'path'
-fs = require 'fs'
 
 ###
 Output Classes
@@ -11,14 +10,8 @@ class Output
   ###
   Base Output Class
   ###
-  constructor: (file, colors) ->
-    @file = file
+  constructor: (colors) ->
     @colors = colors
-
-  save: () ->
-    result = @render()
-    filename = './output/' + @file
-    fs.writeFileSync filename, result
 
 class HTMLOutput extends Output
   ###

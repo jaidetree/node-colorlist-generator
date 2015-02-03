@@ -8,10 +8,12 @@ You may install via NPM by executing:
 `npm install color-list-generator`
 
 You may install it as a global tool via:
-`npm install -g color-list-generator`
+```
+npm install -g color-list-generator
+````
 
 # Usage
-Run `generatorcolors 'basecolors.cson'` and the app will look for `input/basecolors.cson`. Or you may run it locally by running `npm run cli 'basecolors.cson'`. 
+Run `generatorcolors 'basecolors.cson'` and the app will look for `input/basecolors.cson`. Or you may run it locally by running `npm run cli 'input/basecolors.cson'`. 
 
 ## Building
 There are several gulp commands you can use as needed:
