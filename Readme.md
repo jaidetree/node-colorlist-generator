@@ -1,4 +1,4 @@
-(https://dl.dropboxusercontent.com/u/3071780/color-list-generator.png)
+<img src="https://dl.dropboxusercontent.com/u/3071780/color-list-generator.png" alt="Generated Color Table List" />
 
 # Color List Generator
 Generates an array representing a color picker spectrum table.
