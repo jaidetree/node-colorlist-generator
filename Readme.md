@@ -4,36 +4,25 @@
 Generates an array representing a color picker spectrum table.
 
 # Installation
-You may install via NPM by executing: 
-`npm install color-list-generator`
-
 You may install it as a global tool via:
 ```
 npm install -g color-list-generator
 ````
 
+You may install via NPM by executing: 
+```
+npm install color-list-generator
+```
+
+
 # Usage
-Run `generatorcolors 'basecolors.cson'` and the app will look for `input/basecolors.cson`. Or you may run it locally by running `npm run cli 'input/basecolors.cson'`. 
+```
+generatecolors inputfile [output directory]
+```
 
-## Building
-There are several gulp commands you can use as needed:
-  1. `gulp watch` or `npm run watch` - Watches the output directory to refresh the html file. Makes debugging algorithms much easier.
-  2. `gulp coffee` or `npm run build` - Builds the coffeescript files into JS
-  3. `gulp test` or `npm test` - Runs the unit tests using Mocha
-  4. `gulp lint` or `npm run lint` - Runs gulp-coffeelint on all `./src/**/*.coffee` files
+Only accepts input files in the form of CSON files
 
-## Output
-Running this will write files to the project root's `output` directory.
-
-### HTML
-Generates an HTML file showing the colors together. Is designed around 8 rows x 10 cols
-
-### JSON
-Generates a JSON file with an array containing all the files.
-
-# Examples
-
-## Input
+## Example
 `input/basecolors.cson`
 
 ```
@@ -51,7 +40,22 @@ Generates a JSON file with an array containing all the files.
 ]
 ```
 
-## Output
+Then run:
+
+```
+generatecolors input/basecolors.cson output/
+```
+
+
+If no `output` directory is specified the JSON array will be dumped to `stdout`
+
+If an `output` directory is specified, then the following will be generated
+
+  1. `colorlist.json` - A JSON Array of rgb value arrays.
+  2. `colorlist.html` - An HTML preview of the color table in a 10 column matrix.
+
+
+### Sample Output
 
 In HTML:
 ```HTML
@@ -164,3 +168,10 @@ In JSON
 ```JSON
 [[0,0,0],[51,51,51],[76,76,76],[102,102,102],[127,127,127],[153,153,153],[178,178,178],[204,204,204],[229,229,229],[255,255,255],[172,0,43],[255,0,0],[209,108,35],[209,255,35],[0,255,0],[21,206,210],[21,111,210],[0,0,255],[131,21,210],[255,0,255],[230,178,191],[255,178,178],[241,210,189],[241,255,189],[178,255,178],[184,240,241],[184,211,241],[178,178,255],[217,184,241],[255,178,255],[213,127,149],[255,127,127],[232,181,145],[232,255,145],[127,255,127],[138,230,232],[138,183,232],[127,127,255],[193,138,232],[255,127,255],[192,63,96],[255,63,63],[220,144,90],[220,255,90],[63,255,63],[79,218,221],[79,147,221],[63,63,255],[162,79,221],[255,63,255],[137,0,34],[204,0,0],[167,86,28],[167,204,28],[0,204,0],[16,164,168],[16,88,168],[0,0,204],[104,16,168],[204,0,204],[103,0,25],[153,0,0],[125,64,21],[125,153,21],[0,153,0],[12,123,126],[12,66,126],[0,0,153],[78,12,126],[153,0,153],[68,0,17],[102,0,0],[83,43,14],[83,102,14],[0,102,0],[8,82,84],[8,44,84],[0,0,102],[52,8,84],[102,0,102]]
 ```
+
+# Development
+There are several gulp commands you can use as needed:
+  1. `gulp watch` or `npm run watch` - Watches the output directory to refresh the html file. Makes debugging algorithms much easier.
+  2. `gulp coffee` or `npm run build` - Builds the coffeescript files into JS
+  3. `gulp test` or `npm test` - Runs the unit tests using Mocha
+  4. `gulp lint` or `npm run lint` - Runs gulp-coffeelint on all `./src/**/*.coffee` files
