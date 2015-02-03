@@ -14,14 +14,15 @@ class Output
   constructor: (file, colors) ->
     @file = file
     @colors = colors
-    @render()
 
-  save: (result) ->
-    filename = path.join(path.dirname(path.dirname(__dirname)), 'output/' + @file)
+  save: () ->
+    result = @render()
+    filename = path.dirname(path.dirname(__dirname))
+    filename = path.join(filename, 'output/' + @file)
     fs.writeFileSync filename, result
 
 class HTMLOutput extends Output
-  ### 
+  ###
   HTML Output Subclass
   ###
 
@@ -58,8 +59,7 @@ class HTMLOutput extends Output
       @html = html
 
   render: ->
-    result = _f @html, @colors.length, @renderColors()
-    @save result
+    return _f @html, @colors.length, @renderColors()
 
   renderColors: ->
     html = ''
@@ -83,9 +83,9 @@ class JSONOutput extends Output
     for color in @colors
       colors.push color.toArray()
 
-    @save JSON.stringify(colors)
+    return JSON.stringify(colors)
 
-module.exports = 
+module.exports =
   HTML: HTMLOutput
   JSON: JSONOutput
 

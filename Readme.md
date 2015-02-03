@@ -8,10 +8,11 @@ Install via `npm install git://github.com/jayzawrotny/node-colorlist-generator.g
 Just execute `npm run main 'basecolors.cson'` and the app will look for `input/basecolors.cson`
 
 ## Building
-There are 3 gulp commands you can use need:
+There are several gulp commands you can use as needed:
   1. `gulp watch` or `npm run watch` - Watches the output directory to refresh the html file. Makes debugging algorithms much easier.
   2. `gulp coffee` or `npm run build` - Builds the coffeescript files into JS
   3. `gulp test` or `npm test` - Runs the unit tests using Mocha
+  4. `gulp lint` or `npm run lint` - Runs gulp-coffeelint on all `./src/**/*.coffee` files
 
 ## Output
 Running this will write files to the project root's `output` directory.

@@ -1,5 +1,6 @@
 browserSync = require 'browser-sync'
 coffee = require 'gulp-coffee'
+coffeelint = require 'gulp-coffeelint'
 gulp = require 'gulp'
 gutil = require 'gulp-util'
 mocha = require 'gulp-mocha'
@@ -17,10 +18,16 @@ gulp.task 'coffee', ->
     .pipe coffee().on 'error', gutil.log
     .pipe gulp.dest paths.build.lib
 
+gulp.task 'lint', ->
+  gulp.src paths.src.coffee
+    .pipe coffeelint()
+    .pipe coffeelint.reporter()
+
 gulp.task 'test', ->
-  gulp.src paths.test
+  gulp.src paths.test, { read:false }
     .pipe mocha
       bail: true
+  
 
 gulp.task 'watch', ->
   try

@@ -21,12 +21,6 @@ class ColorList
 
     return @colors
 
-  push: (color) ->
-    @colors.push color
-
-  pushRGB: (red=0, green=0, blue=0) ->
-    @colors.push new RGBColor(red, green, blue)
-
   toArray: ->
     return @colors
 
@@ -34,8 +28,8 @@ class ColorList
     colors = []
 
     for color in @colors
-      color.push(color.toString())
+      colors.push(color.toString())
 
-    return colors
+    return colors.join("\n")
    
-module.exports = ColorList 
+module.exports = ColorList

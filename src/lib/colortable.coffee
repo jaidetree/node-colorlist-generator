@@ -15,7 +15,7 @@ class ColorTable
       column = @generateColumn base
       # Put a monochromatic color at the top of the column
       if i == 0
-          i = -1
+        i = -1
       column.unshift RGB.White.darken((i + 1) * 10)
       columns.push column
 
@@ -30,19 +30,19 @@ class ColorTable
 
   generateShades: (base) ->
     shades = []
-    shades.push base.darken(80)
-    shades.push base.darken(60)
-    shades.push base.darken(40)
+    shades.push base.darken(30)
+    shades.push base.darken(50)
+    shades.push base.darken(70)
     return shades
 
   generateTints: (base) ->
     tints = []
-    tints.push base.lighten(30)
+    tints.push base.lighten(70)
     tints.push base.lighten(50)
-    tints.push base.lighten(75)
+    tints.push base.lighten(30)
     return tints
 
   toArray: ->
-    return @table
+    return @build()
 
 module.exports = ColorTable
